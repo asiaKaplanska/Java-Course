@@ -1,8 +1,7 @@
 public class NumberInWord {
-    // write your code here
-    public static void printNumberInWord (int number) {
+    public static void printNumberInWord(int number) {
         String NumberInWord = "OTHER";
-        switch (number) {
+        switch(number) {
             case 0 : NumberInWord = "ZERO"; break;
             case 1 : NumberInWord = "ONE"; break;
             case 2 : NumberInWord = "TWO"; break;

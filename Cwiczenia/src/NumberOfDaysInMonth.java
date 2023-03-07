@@ -1,6 +1,6 @@
 public class NumberOfDaysInMonth {
     // write your code here
-    public static boolean isLeapYear (int year) {
+    public static boolean isLeapYear(int year) {
 
         if (year < 1 || year > 9999) {
             return false;
@@ -13,7 +13,7 @@ public class NumberOfDaysInMonth {
         return false;
     }
 
-    public static int getDaysInMonth (int month, int year) {
+    public static int getDaysInMonth(int month, int year) {
         if (month < 1 || month > 12) {
             return -1;
         }
