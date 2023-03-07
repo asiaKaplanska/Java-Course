@@ -1,20 +1,23 @@
 public class MinutesToYearsDaysCalculator {
     // write your code here
 
-    public static final long MinutesToHour = 60;
-    public static final long HoursToDay = 24;
-    public static final long DaysToYear = 365;
-    public static final long MinutesToYears = MinutesToHour * HoursToDay * DaysToYear;
+    private static final long MINUTES_IN_HOURS = 60;
+    private static final long HOURS_IN_DAY = 24;
+    private static final long DAYS_IN_YEAR = 365;
+    private static final long MINUTES_IN_YEAR = MINUTES_IN_HOURS * HOURS_IN_DAY * DAYS_IN_YEAR;
 
-    public static void printYearsAndDays (long minutes) {
+    public static void printYearsAndDays(long minutes) {
         if (minutes < 0) {
             System.out.println("Invalid Value");
         } else {
 
-            long years = minutes / MinutesToYears;
-            long days = (minutes - years * MinutesToYears) / (MinutesToHour * HoursToDay);
+            var years = minutes / MINUTES_IN_YEAR;
+            var days = (minutes - years * MINUTES_IN_YEAR) / (MINUTES_IN_HOURS * HOURS_IN_DAY);
 
             System.out.println(minutes + " min = " + years + " y and " + days + " d");
+
+             // 2 sposób
+            System.out.printf("%d min = %d y and %d d", minutes, years, days);
         }
     }
 }
