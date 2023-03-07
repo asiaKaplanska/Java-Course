@@ -14,9 +14,9 @@ public class MinutesToYearsDaysCalculator {
             var years = minutes / MINUTES_IN_YEAR;
             var days = (minutes - years * MINUTES_IN_YEAR) / (MINUTES_IN_HOURS * HOURS_IN_DAY);
 
-            System.out.println(minutes + " min = " + years + " y and " + days + " d");
+            //System.out.println(minutes + " min = " + years + " y and " + days + " d");
 
-             // 2 sposób
+             // the other way to print result
             System.out.printf("%d min = %d y and %d d", minutes, years, days);
         }
     }
