@@ -10,8 +10,9 @@ public class MinutesToYearsDaysCalculator {
             return;
         }
 
-        var years = convertMinutesToYear(minutes);
-        var days = convertRemainMinutesToDays(minutes, years);
+        var years = toYears(minutes);
+        var remainingMinutes = minutes - toMinutes(years);
+        var days = toDays(remainingMinutes);
 
         // System.out.println(minutes + " min = " + years + " y and " + days + " d");
 
@@ -19,11 +20,15 @@ public class MinutesToYearsDaysCalculator {
         System.out.printf("%d min = %d y and %d d", minutes, years, days);
     }
 
-    private static long convertMinutesToYear(long minutes) {
+    private static long toYears(long minutes) {
         return (minutes / MINUTES_IN_YEAR);
     }
 
-    private static long convertRemainMinutesToDays(long minutes, long years) {
-        return (minutes - years * MINUTES_IN_YEAR) / (MINUTES_IN_HOUR * HOURS_IN_DAY);
+    private static long toDays(long minutes) {
+        return minutes / (MINUTES_IN_HOUR * HOURS_IN_DAY);
+    }
+
+    private static long toMinutes(long years) {
+        return years * MINUTES_IN_YEAR;
     }
 }

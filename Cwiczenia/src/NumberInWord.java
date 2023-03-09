@@ -1,18 +1,21 @@
 public class NumberInWord {
     public static void printNumberInWord(int number) {
-        String NumberInWord = "OTHER";
-        switch(number) {
-            case 0 : NumberInWord = "ZERO"; break;
-            case 1 : NumberInWord = "ONE"; break;
-            case 2 : NumberInWord = "TWO"; break;
-            case 3 : NumberInWord = "THREE"; break;
-            case 4 : NumberInWord = "FOUR"; break;
-            case 5 : NumberInWord = "FIVE"; break;
-            case 6 : NumberInWord = "SIX"; break;
-            case 7 : NumberInWord = "SEVEN"; break;
-            case 8 : NumberInWord = "EIGHT"; break;
-            case 9 : NumberInWord = "NINE"; break;
-        }
-        System.out.println(NumberInWord);
+        System.out.println(toWord(number));
+    }
+
+    private static String toWord(int number) {
+        return switch (number) {
+            case 0 -> "ZERO";
+            case 1 -> "ONE";
+            case 2 -> "TWO";
+            case 3 -> "THREE";
+            case 4 -> "FOUR";
+            case 5 -> "FIVE";
+            case 6 -> "SIX";
+            case 7 -> "SEVEN";
+            case 8 -> "EIGHT";
+            case 9 -> "NINE";
+            default -> "OTHER";
+        };
     }
 }
