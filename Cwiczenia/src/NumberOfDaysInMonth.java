@@ -1,5 +1,5 @@
 public class NumberOfDaysInMonth {
-    // write your code here
+
     public static boolean isLeapYear(int year) {
 
         if (year < 1 || year > 9999) {
@@ -22,20 +22,20 @@ public class NumberOfDaysInMonth {
             return -1;
         }
 
-        int DaysInMonth = 31;
+        return switch (month) {
+            case 4, 6, 9, 11 -> 30;
+            case 2 -> calculateFebruary(year);
+            default -> 31;
+        };
+    }
 
-        if (isLeapYear(year) == true && month == 2) {
-            DaysInMonth = 29;
+    private static int calculateFebruary(int year) {
+        int daysInMonth = 28;
+
+        if (isLeapYear(year)) {
+            daysInMonth = 29;
         }
 
-        if (isLeapYear(year) == false && month == 2) {
-            DaysInMonth = 28;
-        }
-
-        switch (month) {
-            case 4: case 6: case 9: case 11: DaysInMonth = 30; break;
-        }
-
-        return DaysInMonth;
+        return daysInMonth;
     }
 }
