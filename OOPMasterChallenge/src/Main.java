@@ -6,8 +6,8 @@ public class Main {
         Meal meal = new Meal();
 
         System.out.println("----------- Customized Meal with Burger -----------");
-        Drink drink = new Drink("Sprite", "large");
-        SideItem sideItem = new SideItem("Sweet potato fries");
+        Drink drink = new Drink(DrinkType.PEPSI, DrinkType.LARGE);
+        SideItem sideItem = new SideItem(SideItemType.SWEET_FRIES);
         Burger burger = new Burger("Cheeseburger", 5.99);
 
         burger.addExtraTopping(2);
@@ -15,8 +15,8 @@ public class Main {
         Meal meal1 = new Meal(drink, sideItem, burger);
 
         System.out.println("----------- Customized Meal with Deluxe Burger -----------");
-        Drink drink1 = new Drink("Ice Tea", "small");
-        SideItem sideItem1 = new SideItem("Nuggets");
+        Drink drink1 = new Drink(DrinkType.SPRITE, DrinkType.SMALL);
+        SideItem sideItem1 = new SideItem(SideItemType.NUGGETS);
         DeluxeBurger deluxeBurger = new DeluxeBurger("BigBurger");
 
         Meal meal2 = new Meal(drink1, sideItem1, deluxeBurger);

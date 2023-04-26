@@ -30,12 +30,7 @@ public class NumberOfDaysInMonth {
     }
 
     private static int calculateFebruary(int year) {
-        int daysInMonth = 28;
 
-        if (isLeapYear(year)) {
-            daysInMonth = 29;
-        }
-
-        return daysInMonth;
+        return (isLeapYear(year)) ? 29 : 28;
     }
 }

@@ -8,9 +8,9 @@ public class Drink {
         this.type = type;
         this.size = size;
         price = switch (this.size) {
-            case "small" -> 1.75;
-            case "medium" -> 2.5;
-            case "large" -> 3.0;
+            case DrinkType.SMALL -> 1.75;
+            case DrinkType.MEDIUM -> 2.5;
+            case DrinkType.LARGE -> 3.0;
             default -> throw new IllegalStateException("Invalid size: " + this.size);
         };
     }

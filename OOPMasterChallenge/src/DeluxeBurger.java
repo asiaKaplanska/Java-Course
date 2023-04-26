@@ -1,17 +1,14 @@
-public class DeluxeBurger{
+public class DeluxeBurger extends Burger{
 
-    private String type;
-    private static double price = 20.99;
+    // private final double PRICE = 20.99;
 
     public DeluxeBurger(String type) {
-        this.type = type;
+        super(type, 20.99);
+
     }
 
-    public double getPrice() {
-        return price;
-    }
-
-    private void addToppings(int toppings) {
+    @Override
+    public void addExtraTopping(int toppings) {
         for (int i = 1; i <= 5; i++) {
             System.out.println("Added " + " toppings");
         }
@@ -20,7 +17,4 @@ public class DeluxeBurger{
         }
     }
 
-    public void deluxeBurger() {
-        System.out.println("Cost of " + type +  " is equals $" + price);
-    }
 }

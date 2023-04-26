@@ -7,8 +7,8 @@ public class Meal {
 
 
     public Meal() {
-        Drink drink = new Drink("Cola", "medium");
-        SideItem sideItem = new SideItem("Fries");
+        Drink drink = new Drink(DrinkType.PEPSI, DrinkType.MEDIUM);
+        SideItem sideItem = new SideItem(SideItemType.NUGGETS);
         Burger burger = new Burger("Hamburger", 7.99);
 
         drink.drink();
@@ -41,9 +41,9 @@ public class Meal {
 
         drink.drink();
         sideItem.sideItem();
-        deluxeBurger.deluxeBurger();
+        deluxeBurger.burger();
 
-        double mealCost = deluxeBurger.getPrice();
+        double mealCost = deluxeBurger.getBasePrice();
         System.out.println("Total cost: $" + mealCost);
     }
 }

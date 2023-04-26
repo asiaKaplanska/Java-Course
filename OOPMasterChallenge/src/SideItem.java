@@ -6,9 +6,9 @@ public class SideItem {
     public SideItem(String type) {
         this.type = type;
         price = switch (this.type) {
-            case "Fries" -> 3.5;
-            case "Sweet potato fries" -> 4.0;
-            case "Nuggets" -> 4.2;
+            case SideItemType.FRIES -> 3.5;
+            case SideItemType.SWEET_FRIES -> 4.0;
+            case SideItemType.NUGGETS -> 4.2;
             default -> 0;
         };
     }
