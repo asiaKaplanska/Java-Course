@@ -1,0 +1,71 @@
+1.
+create view song_list1 as
+select songs.title from songs 
+inner join albums on songs.album = albums._id
+where albums.name = 'Forbidden'; 
+
+select * from song_list1;
+
+2.
+create view song_list2 as
+select songs.track, songs.title from songs 
+inner join albums on songs.album = albums._id
+where albums.name = 'Forbidden'
+order by songs.track; 
+
+select * from song_list2;
+
+3.
+create view song_list3 as
+select songs.title from songs
+inner join albums on songs.album = albums._id
+inner join artists on albums.artist = artists._id
+where artists.name = 'Deep Purple';
+
+select * from song_list3;
+
+4.
+update artists
+set name = 'One Kitten'
+where name = 'Mehitabel';
+
+5.
+select * from artists where _id = 3;
+
+6.
+create view song_list6 as
+select songs.title from songs
+inner join albums on songs.album = albums._id
+inner join artists on albums.artist = artists._id
+where artists.name = 'Aerosmith'
+order by songs.title
+collate nocase;
+
+select * from song_list6;
+
+7.
+select count(*) from song_list6;
+
+8.
+create view song_list8 as
+select distinct songs.title from songs
+inner join albums on songs.album = albums._id
+inner join artists on albums.artist = artists._id
+where artists.name = 'Aerosmith'
+order by songs.title
+collate nocase;
+
+9.
+select count(*) from song_list8;
+
+10.
+create view song_list10 as
+select distinct songs.title, artists.name, albums._id from songs
+inner join albums on songs.album = albums._id
+inner join artists on albums.artist = artists._id
+where artists.name = 'Aerosmith'
+order by songs.title
+collate nocase;
+
+select count(distinct name) from song_list10;
+select count(distinct _id) from song_list10;

@@ -1,0 +1,23 @@
+select artists.name, albums.name, songs.track, songs.title from songs
+inner join albums on songs.album = albums._id
+inner join artists on albums.artist = artists._id
+where artists.name like 'jefferson%'
+order by artists.name, albums.name, songs.track;
+
+create view artist_list as
+select artists.name, albums.name, songs.track, songs.title from songs
+inner join albums on songs.album = albums._id
+inner join artists on albums.artist = artists._id
+order by artists.name, albums.name, songs.track;
+
+create view album_list as 
+select name from albums
+order by name
+collate nocase;
+
+delete from songs where track < 50;
+
+select * from songs where track <> 50;
+
+select count(*) from songs;
+
